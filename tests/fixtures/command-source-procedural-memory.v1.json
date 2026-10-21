@@ -1,0 +1,1042 @@
+{
+  "build": {
+    "base": "packaged",
+    "schema": "guard.command-extension-build.v1",
+    "sources": [
+      {
+        "extension": {
+          "action_classes": [
+            "procedural-memory skill delete command",
+            "procedural-memory legacy skill import command"
+          ],
+          "aliases": [],
+          "conflicts": [],
+          "delegated_protection": null,
+          "dependencies": [],
+          "description": "Reviews procedural-memory CLI commands that write the skill store: deleting a learned skill, and importing legacy skills, which replaces any stored skill with the same intent. Reads such as list and show stay unreviewed.",
+          "ecosystem_ids": [
+            "procedural-memory"
+          ],
+          "executables": [
+            "procedural-memory"
+          ],
+          "extension_id": "command.procedural-memory",
+          "homepage": "https://pypi.org/project/scriptflow-procedural-memory/",
+          "icon": {
+            "kind": "none"
+          },
+          "license": "MIT",
+          "name": "procedural-memory command protection",
+          "permissions": [
+            {
+              "action_classes": [
+                "procedural-memory skill delete command"
+              ],
+              "baseline_floor": "review",
+              "configurable": true,
+              "conflicts": [],
+              "default_enabled": true,
+              "dependencies": [],
+              "deprecated": false,
+              "description": "Identifies `procedural-memory delete <intent>` and its `python -m procedural_memory` form, which permanently remove a learned skill and its usage stats from the skill store. The agent then has to rediscover the procedure on the next matching request.",
+              "example_command": "procedural-memory --root ./skills delete create_note_for_record",
+              "family": null,
+              "fixed_reason": null,
+              "implementation_version": "1.0.0",
+              "implied_permissions": [],
+              "introduced_version": "1.0.0",
+              "label": "procedural-memory skill delete",
+              "permission_id": "command.procedural-memory.permission.delete",
+              "replacement_permission_id": null,
+              "risk_tier": "medium",
+              "safer_guidance": [
+                "Run procedural-memory show <intent> first and keep a copy of the skill JSON.",
+                "Run procedural-memory list to confirm the intent name and the --root directory."
+              ],
+              "typed_capabilities": []
+            },
+            {
+              "action_classes": [
+                "procedural-memory legacy skill import command"
+              ],
+              "baseline_floor": "review",
+              "configurable": true,
+              "conflicts": [],
+              "default_enabled": true,
+              "dependencies": [],
+              "deprecated": false,
+              "description": "Identifies `procedural-memory import-legacy <dir>` and its `python -m procedural_memory` form, which write skills into the store and replace any stored skill with the same intent, so a working procedure can be overwritten by an imported one.",
+              "example_command": "procedural-memory --root ./skills import-legacy ./legacy-skills",
+              "family": null,
+              "fixed_reason": null,
+              "implementation_version": "1.0.0",
+              "implied_permissions": [],
+              "introduced_version": "1.0.0",
+              "label": "procedural-memory legacy skill import",
+              "permission_id": "command.procedural-memory.permission.import-legacy",
+              "replacement_permission_id": null,
+              "risk_tier": "medium",
+              "safer_guidance": [
+                "Import into an empty --root directory first and review the result with procedural-memory list.",
+                "Back up the target skills directory before importing into it."
+              ],
+              "typed_capabilities": []
+            }
+          ],
+          "project_markers": [],
+          "publisher": {
+            "display_name": "Community",
+            "id": "community.procedural-memory",
+            "url": "https://github.com/GrappinoRoot/scriptflow"
+          },
+          "reference_urls": [
+            "https://pypi.org/project/scriptflow-procedural-memory/",
+            "https://github.com/GrappinoRoot/scriptflow"
+          ],
+          "required": false,
+          "risk_classes": [
+            "destructive_shell"
+          ],
+          "rules": [
+            {
+              "action_classes": [
+                "procedural-memory skill delete command"
+              ],
+              "default_mode": "review",
+              "description": "Identifies `procedural-memory delete <intent>` and its `python -m procedural_memory` form, which permanently remove a learned skill and its usage stats from the skill store. The agent then has to rediscover the procedure on the next matching request.",
+              "family": null,
+              "matcher": {
+                "config": {},
+                "matchers": [
+                  {
+                    "config": {
+                      "executables": [
+                        "procedural-memory",
+                        "procedural-memory.cmd",
+                        "procedural-memory.exe"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [],
+                      "options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root"
+                      ],
+                      "required_flags_anywhere": [],
+                      "subcommands": [
+                        "delete"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "python",
+                        "python3"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root"
+                      ],
+                      "options_with_values": [],
+                      "required_flags_anywhere": [
+                        "-m"
+                      ],
+                      "subcommands": [
+                        "procedural_memory",
+                        "delete"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "python",
+                        "python3"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root"
+                      ],
+                      "options_with_values": [],
+                      "required_flags_anywhere": [
+                        "-m"
+                      ],
+                      "subcommands": [
+                        "procedural_memory.cli",
+                        "delete"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  }
+                ],
+                "op": "any.v1"
+              },
+              "native_capability": null,
+              "permission_id": "command.procedural-memory.permission.delete",
+              "risk_classes": [
+                "destructive_shell"
+              ],
+              "rule_id": "command.procedural-memory.delete",
+              "rule_version": "1.0.0",
+              "safe_variants": [
+                {
+                  "matcher": {
+                    "config": {},
+                    "matchers": [
+                      {
+                        "config": {},
+                        "matchers": [
+                          {
+                            "config": {
+                              "executables": [
+                                "procedural-memory",
+                                "procedural-memory.cmd",
+                                "procedural-memory.exe"
+                              ],
+                              "forbidden_flags": [],
+                              "forbidden_flags_before_delimiter": [],
+                              "interleaved_options_with_values": [],
+                              "options_with_values": [
+                                "--r",
+                                "--ro",
+                                "--roo",
+                                "--root"
+                              ],
+                              "required_flags_anywhere": [],
+                              "subcommands": [
+                                "delete"
+                              ]
+                            },
+                            "op": "leading-subcommand.v1"
+                          },
+                          {
+                            "config": {
+                              "executables": [
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "forbidden_flags": [],
+                              "forbidden_flags_before_delimiter": [],
+                              "interleaved_options_with_values": [
+                                "--r",
+                                "--ro",
+                                "--roo",
+                                "--root"
+                              ],
+                              "options_with_values": [],
+                              "required_flags_anywhere": [
+                                "-m"
+                              ],
+                              "subcommands": [
+                                "procedural_memory",
+                                "delete"
+                              ]
+                            },
+                            "op": "leading-subcommand.v1"
+                          },
+                          {
+                            "config": {
+                              "executables": [
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "forbidden_flags": [],
+                              "forbidden_flags_before_delimiter": [],
+                              "interleaved_options_with_values": [
+                                "--r",
+                                "--ro",
+                                "--roo",
+                                "--root"
+                              ],
+                              "options_with_values": [],
+                              "required_flags_anywhere": [
+                                "-m"
+                              ],
+                              "subcommands": [
+                                "procedural_memory.cli",
+                                "delete"
+                              ]
+                            },
+                            "op": "leading-subcommand.v1"
+                          }
+                        ],
+                        "op": "any.v1"
+                      },
+                      {
+                        "config": {},
+                        "matchers": [
+                          {
+                            "config": {
+                              "executables": [
+                                "procedural-memory",
+                                "procedural-memory.cmd",
+                                "procedural-memory.exe",
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "required_flags": [
+                                "--help"
+                              ]
+                            },
+                            "op": "executable.v1"
+                          },
+                          {
+                            "config": {
+                              "executables": [
+                                "procedural-memory",
+                                "procedural-memory.cmd",
+                                "procedural-memory.exe",
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "required_flags": [
+                                "-h"
+                              ]
+                            },
+                            "op": "executable.v1"
+                          }
+                        ],
+                        "op": "any.v1"
+                      }
+                    ],
+                    "op": "all.v1"
+                  },
+                  "title": "procedural-memory command help",
+                  "variant_id": "help"
+                }
+              ],
+              "safer_alternatives": [
+                "Run procedural-memory show <intent> first and keep a copy of the skill JSON.",
+                "Run procedural-memory list to confirm the intent name and the --root directory."
+              ],
+              "severity": "medium",
+              "title": "procedural-memory skill delete"
+            },
+            {
+              "action_classes": [
+                "procedural-memory legacy skill import command"
+              ],
+              "default_mode": "review",
+              "description": "Identifies `procedural-memory import-legacy <dir>` and its `python -m procedural_memory` form, which write skills into the store and replace any stored skill with the same intent, so a working procedure can be overwritten by an imported one.",
+              "family": null,
+              "matcher": {
+                "config": {},
+                "matchers": [
+                  {
+                    "config": {
+                      "executables": [
+                        "procedural-memory",
+                        "procedural-memory.cmd",
+                        "procedural-memory.exe"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [],
+                      "options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root"
+                      ],
+                      "required_flags_anywhere": [],
+                      "subcommands": [
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "python",
+                        "python3"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root"
+                      ],
+                      "options_with_values": [],
+                      "required_flags_anywhere": [
+                        "-m"
+                      ],
+                      "subcommands": [
+                        "procedural_memory",
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "python",
+                        "python3"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root"
+                      ],
+                      "options_with_values": [],
+                      "required_flags_anywhere": [
+                        "-m"
+                      ],
+                      "subcommands": [
+                        "procedural_memory.cli",
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  }
+                ],
+                "op": "any.v1"
+              },
+              "native_capability": null,
+              "permission_id": "command.procedural-memory.permission.import-legacy",
+              "risk_classes": [
+                "destructive_shell"
+              ],
+              "rule_id": "command.procedural-memory.import-legacy",
+              "rule_version": "1.0.0",
+              "safe_variants": [
+                {
+                  "matcher": {
+                    "config": {},
+                    "matchers": [
+                      {
+                        "config": {},
+                        "matchers": [
+                          {
+                            "config": {
+                              "executables": [
+                                "procedural-memory",
+                                "procedural-memory.cmd",
+                                "procedural-memory.exe"
+                              ],
+                              "forbidden_flags": [],
+                              "forbidden_flags_before_delimiter": [],
+                              "interleaved_options_with_values": [],
+                              "options_with_values": [
+                                "--r",
+                                "--ro",
+                                "--roo",
+                                "--root"
+                              ],
+                              "required_flags_anywhere": [],
+                              "subcommands": [
+                                "import-legacy"
+                              ]
+                            },
+                            "op": "leading-subcommand.v1"
+                          },
+                          {
+                            "config": {
+                              "executables": [
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "forbidden_flags": [],
+                              "forbidden_flags_before_delimiter": [],
+                              "interleaved_options_with_values": [
+                                "--r",
+                                "--ro",
+                                "--roo",
+                                "--root"
+                              ],
+                              "options_with_values": [],
+                              "required_flags_anywhere": [
+                                "-m"
+                              ],
+                              "subcommands": [
+                                "procedural_memory",
+                                "import-legacy"
+                              ]
+                            },
+                            "op": "leading-subcommand.v1"
+                          },
+                          {
+                            "config": {
+                              "executables": [
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "forbidden_flags": [],
+                              "forbidden_flags_before_delimiter": [],
+                              "interleaved_options_with_values": [
+                                "--r",
+                                "--ro",
+                                "--roo",
+                                "--root"
+                              ],
+                              "options_with_values": [],
+                              "required_flags_anywhere": [
+                                "-m"
+                              ],
+                              "subcommands": [
+                                "procedural_memory.cli",
+                                "import-legacy"
+                              ]
+                            },
+                            "op": "leading-subcommand.v1"
+                          }
+                        ],
+                        "op": "any.v1"
+                      },
+                      {
+                        "config": {},
+                        "matchers": [
+                          {
+                            "config": {
+                              "executables": [
+                                "procedural-memory",
+                                "procedural-memory.cmd",
+                                "procedural-memory.exe",
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "required_flags": [
+                                "--help"
+                              ]
+                            },
+                            "op": "executable.v1"
+                          },
+                          {
+                            "config": {
+                              "executables": [
+                                "procedural-memory",
+                                "procedural-memory.cmd",
+                                "procedural-memory.exe",
+                                "py",
+                                "python",
+                                "python3"
+                              ],
+                              "required_flags": [
+                                "-h"
+                              ]
+                            },
+                            "op": "executable.v1"
+                          }
+                        ],
+                        "op": "any.v1"
+                      }
+                    ],
+                    "op": "all.v1"
+                  },
+                  "title": "procedural-memory command help",
+                  "variant_id": "help"
+                }
+              ],
+              "safer_alternatives": [
+                "Import into an empty --root directory first and review the result with procedural-memory list.",
+                "Back up the target skills directory before importing into it."
+              ],
+              "severity": "medium",
+              "title": "procedural-memory legacy skill import"
+            }
+          ],
+          "safer_alternatives": [
+            "Inspect the store with procedural-memory list and procedural-memory show <intent> before changing it.",
+            "Point --root at a scratch directory when trying an import."
+          ],
+          "source": "built-in",
+          "version": "1.0.0"
+        },
+        "schema": "guard.command-extension-source.v1"
+      }
+    ],
+    "trust": {
+      "classes": {
+        "external": [
+          "command.agentbridge",
+          "command.answerloops",
+          "command.appimg",
+          "command.blitcp",
+          "command.blkcp",
+          "command.cloudg",
+          "command.cogext",
+          "command.cs",
+          "command.ctty",
+          "command.digline",
+          "command.errand",
+          "command.faf-cli",
+          "command.genclave",
+          "command.gitsync",
+          "command.google-workspace.gog",
+          "command.keibidrop",
+          "command.kim",
+          "command.kranz",
+          "command.mcp-agenthub",
+          "command.mcp-asdecided",
+          "command.mcp-authyouragent",
+          "command.mcp-clipugc",
+          "command.mcp-contribos",
+          "command.mcp-evernode-mcp",
+          "command.mcp-filesystem",
+          "command.mcp-instapods",
+          "command.mcp-insumer",
+          "command.mcp-lattice-talk",
+          "command.mcp-loomdesk",
+          "command.mcp-pr-ui-compare",
+          "command.mcp-reaper",
+          "command.mcp-vome-home-assistant",
+          "command.mcp-x-reader",
+          "command.mcp-xahau-mcp",
+          "command.noodle",
+          "command.ollama",
+          "command.probe",
+          "command.procedural-memory",
+          "command.remote.essh",
+          "command.repo2nb",
+          "command.repopy",
+          "command.routed",
+          "command.skill-base",
+          "command.skill-sunset",
+          "command.snoboard",
+          "command.syngraphe",
+          "command.theourgia",
+          "command.tui-runner",
+          "command.uivoid",
+          "command.vttforge",
+          "command.xencode",
+          "command.xrpl-muse-skill"
+        ],
+        "first-party": [
+          "command.container-runtime",
+          "command.data-protection",
+          "command.encoded-execution",
+          "command.filesystem",
+          "command.git",
+          "command.guard-self-protection",
+          "command.kubernetes-secrets",
+          "command.package.go",
+          "command.package.jvm",
+          "command.package.node",
+          "command.package.php",
+          "command.package.python",
+          "command.package.ruby",
+          "command.package.rust",
+          "command.package.system",
+          "command.shell-mutations",
+          "command.system",
+          "command.windows"
+        ],
+        "trusted-library": [
+          "command.api-gateway",
+          "command.backup.borg",
+          "command.backup.rclone",
+          "command.backup.restic",
+          "command.backup.velero",
+          "command.cdn",
+          "command.cicd.circleci",
+          "command.cicd.github",
+          "command.cicd.gitlab",
+          "command.cloud.aws",
+          "command.cloud.azure",
+          "command.cloud.gcp",
+          "command.database.mongodb",
+          "command.database.mysql",
+          "command.database.postgresql",
+          "command.database.redis",
+          "command.database.sqlite",
+          "command.database.supabase",
+          "command.dns.aws",
+          "command.dns.azure",
+          "command.dns.gcp",
+          "command.email",
+          "command.feature-flags",
+          "command.framework.laravel",
+          "command.github",
+          "command.infrastructure-as-code",
+          "command.kubernetes-operations",
+          "command.load-balancer",
+          "command.messaging.kafka",
+          "command.messaging.nats",
+          "command.messaging.rabbitmq",
+          "command.monitoring",
+          "command.payment",
+          "command.platform.heroku",
+          "command.platform.netlify",
+          "command.platform.vercel",
+          "command.remote.rsync",
+          "command.remote.scp",
+          "command.remote.ssh",
+          "command.search.elasticsearch",
+          "command.storage.aws-s3",
+          "command.storage.azure-blob",
+          "command.storage.google-cloud",
+          "command.storage.minio"
+        ]
+      },
+      "publishers": {
+        "hol": {
+          "displayName": "Hashgraph Online",
+          "id": "hol"
+        },
+        "hol-curated": {
+          "displayName": "HOL curated library",
+          "id": "hol-curated"
+        }
+      },
+      "schemaVersion": "guard.extension-trust-class-map.v1"
+    }
+  },
+  "cases": [
+    {
+      "command": "procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --root ./skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-root",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --root=./skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-root-assignment",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --ro ./skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-root-abbreviated",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --root './my skills' delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-root-path-with-spaces",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "/usr/local/bin/procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-absolute-executable",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory.exe --root skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-exe",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python -m procedural_memory --root ./skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-python-module",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python3 -m procedural_memory.cli delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-python3-cli-module",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "py -m procedural_memory --r=skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-py-root-abbreviated-assignment",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory list && procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        1
+      ],
+      "id": "delete-after-read-in-sequence",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --root ./skills $ACTION create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "subcommand-expansion",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory delete --help",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "delete-help",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --root ./skills delete -h",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "delete-short-help",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python -m procedural_memory delete --help",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "delete-python-help",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory list",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "list",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --root ./skills show delete",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "show-skill-named-delete",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory --root delete list",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "list-root-named-delete",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "exec procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "block",
+      "expected_effective_segments": [],
+      "id": "exec-delete",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "xargs -n 1 procedural-memory delete",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "block",
+      "expected_effective_segments": [],
+      "id": "xargs-delete",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "echo procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "allow",
+      "expected_effective_segments": [],
+      "id": "unrelated-echo",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "import-legacy",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "procedural-memory --root ./skills import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "import-legacy-root",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "python3 -m procedural_memory --root=./skills import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "import-legacy-python-module",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "procedural-memory import-legacy --help",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "import-legacy-help",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "procedural-memory --root ./skills show create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "show-for-import-rule",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "exec procedural-memory import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "block",
+      "expected_effective_segments": [],
+      "id": "exec-import-legacy",
+      "rule_id": "command.procedural-memory.import-legacy"
+    }
+  ],
+  "schema": "guard.command-extension-fixtures.v1"
+}
