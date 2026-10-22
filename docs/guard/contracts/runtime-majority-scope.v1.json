@@ -218,7 +218,6 @@
           "src/codex_plugin_scanner/guard/aibom_content_upload.py",
           "src/codex_plugin_scanner/guard/aibom_models.py",
           "src/codex_plugin_scanner/guard/aibom_reporting.py",
-          "src/codex_plugin_scanner/guard/aibom_symlink.py",
           "src/codex_plugin_scanner/guard/aibom_sync.py",
           "src/codex_plugin_scanner/guard/aibom_trust_metadata.py",
           "src/codex_plugin_scanner/guard/local_risk_report.py",
@@ -864,6 +863,12 @@
           "src/codex_plugin_scanner/guard/secret_redaction.py"
         ],
         "reason": "Reviewed and retained in runtime scope: catalog_delivery/discovery reaches this lazily when it records a failing catalog preparation or publication refresh in daemon.log. It only strips token, password and bearer shapes from a bounded diagnostic line; it decides nothing about what Guard allows."
+      },
+      {
+        "path": [
+          "src/codex_plugin_scanner/guard/cli/native_hook_exit_code.py"
+        ],
+        "reason": "Reviewed and retained in runtime scope: the per-harness verdict exit-status table. The JSON document now carries the status the resident's directive decided, so commands_support_hook_payload no longer imports this table at load; commands_hook_native_availability still reaches it lazily to map a native-unavailable fail-closed deny onto the harness's own exit contract. That fallback runs exactly when the resident cannot answer, so the table stays counted as runtime until the native runtime owns the unavailable lane too."
       }
     ],
     "tests": {
@@ -1978,24 +1983,6 @@
         "entry_points": [],
         "reason": "Building Cloud edge events for queued memory decisions, runtime session reports and access-graph snapshots. These are assembled by background delivery and the supervisor, after any hook decision has returned.",
         "evidence": "build_memory_decision_event_envelope is called only from memory_decision_outbox.py, build_runtime_session_event only from runtime/runner.py and build_access_graph_snapshot_event only from access_graph_events.py; all three callers are outside runtime scope. The retained receipt, policy and harness-usage builders do not reference them, and the report validates this reference closure on every run."
-      },
-      {
-        "id": "extension-control-dashboard-resolution",
-        "category": "control_plane",
-        "path": "src/codex_plugin_scanner/guard/runtime/extension_control_resolver.py",
-        "symbols": [
-          "_FAILURE_REASON",
-          "_TRUSTED_LOCKDOWN_SURFACES",
-          "resolve_extension_controls",
-          "_has_explicit_enabled_permission",
-          "_validate_layer_targets",
-          "_extension_closure",
-          "_permission_closure",
-          "_resolution"
-        ],
-        "entry_points": [],
-        "reason": "resolve_extension_controls builds the effective extension-control view for the dashboard projection and the semantic preview. Hook evaluation reads extension controls through the native resident and never calls it.",
-        "evidence": "rg -l 'resolve_extension_controls' src -g '*.py' lists only daemon/extension_control_projection.py and daemon/extension_control_semantic_preview.py outside runtime/extension_control_resolver.py; neither is in the runtime import closure."
       },
       {
         "id": "unlisted-cli-check-for-mcp-probe",
