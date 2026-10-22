@@ -38,7 +38,7 @@
               "default_enabled": true,
               "dependencies": [],
               "deprecated": false,
-              "description": "Identifies `procedural-memory delete <intent>` and its `python -m procedural_memory` form, which permanently remove a learned skill and its usage stats from the skill store. The agent then has to rediscover the procedure on the next matching request.",
+              "description": "Identifies `procedural-memory delete <intent>` and its `python -m procedural_memory` forms, which permanently remove a learned skill and its usage stats from the skill store. The agent then has to rediscover the procedure on the next matching request.",
               "example_command": "procedural-memory --root ./skills delete create_note_for_record",
               "family": null,
               "fixed_reason": null,
@@ -65,7 +65,7 @@
               "default_enabled": true,
               "dependencies": [],
               "deprecated": false,
-              "description": "Identifies `procedural-memory import-legacy <dir>` and its `python -m procedural_memory` form, which write skills into the store and replace any stored skill with the same intent, so a working procedure can be overwritten by an imported one.",
+              "description": "Identifies `procedural-memory import-legacy <dir>` and its `python -m procedural_memory` forms, which write skills into the store and replace any stored skill with the same intent, so a working procedure can be overwritten by an imported one.",
               "example_command": "procedural-memory --root ./skills import-legacy ./legacy-skills",
               "family": null,
               "fixed_reason": null,
@@ -103,7 +103,7 @@
                 "procedural-memory skill delete command"
               ],
               "default_mode": "review",
-              "description": "Identifies `procedural-memory delete <intent>` and its `python -m procedural_memory` form, which permanently remove a learned skill and its usage stats from the skill store. The agent then has to rediscover the procedure on the next matching request.",
+              "description": "Identifies `procedural-memory delete <intent>` and its `python -m procedural_memory` forms, which permanently remove a learned skill and its usage stats from the skill store. The agent then has to rediscover the procedure on the next matching request.",
               "family": null,
               "matcher": {
                 "config": {},
@@ -135,8 +135,19 @@
                     "config": {
                       "executables": [
                         "py",
+                        "py.cmd",
+                        "py.exe",
                         "python",
-                        "python3"
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -146,7 +157,10 @@
                         "--roo",
                         "--root"
                       ],
-                      "options_with_values": [],
+                      "options_with_values": [
+                        "-W",
+                        "-X"
+                      ],
                       "required_flags_anywhere": [
                         "-m"
                       ],
@@ -161,8 +175,19 @@
                     "config": {
                       "executables": [
                         "py",
+                        "py.cmd",
+                        "py.exe",
                         "python",
-                        "python3"
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -172,12 +197,91 @@
                         "--roo",
                         "--root"
                       ],
-                      "options_with_values": [],
+                      "options_with_values": [
+                        "-W",
+                        "-X"
+                      ],
                       "required_flags_anywhere": [
                         "-m"
                       ],
                       "subcommands": [
                         "procedural_memory.cli",
+                        "delete"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "py.cmd",
+                        "py.exe",
+                        "python",
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [],
+                      "options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "-W",
+                        "-X"
+                      ],
+                      "required_flags_anywhere": [
+                        "-mprocedural_memory"
+                      ],
+                      "subcommands": [
+                        "delete"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "py.cmd",
+                        "py.exe",
+                        "python",
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [],
+                      "options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "-W",
+                        "-X"
+                      ],
+                      "required_flags_anywhere": [
+                        "-mprocedural_memory.cli"
+                      ],
+                      "subcommands": [
                         "delete"
                       ]
                     },
@@ -199,126 +303,377 @@
                     "config": {},
                     "matchers": [
                       {
-                        "config": {},
-                        "matchers": [
-                          {
-                            "config": {
-                              "executables": [
-                                "procedural-memory",
-                                "procedural-memory.cmd",
-                                "procedural-memory.exe"
-                              ],
-                              "forbidden_flags": [],
-                              "forbidden_flags_before_delimiter": [],
-                              "interleaved_options_with_values": [],
-                              "options_with_values": [
-                                "--r",
-                                "--ro",
-                                "--roo",
-                                "--root"
-                              ],
-                              "required_flags_anywhere": [],
-                              "subcommands": [
-                                "delete"
-                              ]
-                            },
-                            "op": "leading-subcommand.v1"
-                          },
-                          {
-                            "config": {
-                              "executables": [
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "forbidden_flags": [],
-                              "forbidden_flags_before_delimiter": [],
-                              "interleaved_options_with_values": [
-                                "--r",
-                                "--ro",
-                                "--roo",
-                                "--root"
-                              ],
-                              "options_with_values": [],
-                              "required_flags_anywhere": [
-                                "-m"
-                              ],
-                              "subcommands": [
-                                "procedural_memory",
-                                "delete"
-                              ]
-                            },
-                            "op": "leading-subcommand.v1"
-                          },
-                          {
-                            "config": {
-                              "executables": [
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "forbidden_flags": [],
-                              "forbidden_flags_before_delimiter": [],
-                              "interleaved_options_with_values": [
-                                "--r",
-                                "--ro",
-                                "--roo",
-                                "--root"
-                              ],
-                              "options_with_values": [],
-                              "required_flags_anywhere": [
-                                "-m"
-                              ],
-                              "subcommands": [
-                                "procedural_memory.cli",
-                                "delete"
-                              ]
-                            },
-                            "op": "leading-subcommand.v1"
-                          }
-                        ],
-                        "op": "any.v1"
+                        "config": {
+                          "executables": [
+                            "procedural-memory",
+                            "procedural-memory.cmd",
+                            "procedural-memory.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
                       },
                       {
-                        "config": {},
-                        "matchers": [
-                          {
-                            "config": {
-                              "executables": [
-                                "procedural-memory",
-                                "procedural-memory.cmd",
-                                "procedural-memory.exe",
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "required_flags": [
-                                "--help"
-                              ]
-                            },
-                            "op": "executable.v1"
-                          },
-                          {
-                            "config": {
-                              "executables": [
-                                "procedural-memory",
-                                "procedural-memory.cmd",
-                                "procedural-memory.exe",
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "required_flags": [
-                                "-h"
-                              ]
-                            },
-                            "op": "executable.v1"
-                          }
-                        ],
-                        "op": "any.v1"
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory.cli",
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-mprocedural_memory"
+                          ],
+                          "subcommands": [
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-mprocedural_memory.cli"
+                          ],
+                          "subcommands": [
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "procedural-memory",
+                            "procedural-memory.cmd",
+                            "procedural-memory.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory.cli",
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-mprocedural_memory"
+                          ],
+                          "subcommands": [
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-mprocedural_memory.cli"
+                          ],
+                          "subcommands": [
+                            "delete"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
                       }
                     ],
-                    "op": "all.v1"
+                    "op": "any.v1"
                   },
                   "title": "procedural-memory command help",
                   "variant_id": "help"
@@ -336,7 +691,7 @@
                 "procedural-memory legacy skill import command"
               ],
               "default_mode": "review",
-              "description": "Identifies `procedural-memory import-legacy <dir>` and its `python -m procedural_memory` form, which write skills into the store and replace any stored skill with the same intent, so a working procedure can be overwritten by an imported one.",
+              "description": "Identifies `procedural-memory import-legacy <dir>` and its `python -m procedural_memory` forms, which write skills into the store and replace any stored skill with the same intent, so a working procedure can be overwritten by an imported one.",
               "family": null,
               "matcher": {
                 "config": {},
@@ -368,8 +723,19 @@
                     "config": {
                       "executables": [
                         "py",
+                        "py.cmd",
+                        "py.exe",
                         "python",
-                        "python3"
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -379,7 +745,10 @@
                         "--roo",
                         "--root"
                       ],
-                      "options_with_values": [],
+                      "options_with_values": [
+                        "-W",
+                        "-X"
+                      ],
                       "required_flags_anywhere": [
                         "-m"
                       ],
@@ -394,8 +763,19 @@
                     "config": {
                       "executables": [
                         "py",
+                        "py.cmd",
+                        "py.exe",
                         "python",
-                        "python3"
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -405,12 +785,91 @@
                         "--roo",
                         "--root"
                       ],
-                      "options_with_values": [],
+                      "options_with_values": [
+                        "-W",
+                        "-X"
+                      ],
                       "required_flags_anywhere": [
                         "-m"
                       ],
                       "subcommands": [
                         "procedural_memory.cli",
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "py.cmd",
+                        "py.exe",
+                        "python",
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [],
+                      "options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "-W",
+                        "-X"
+                      ],
+                      "required_flags_anywhere": [
+                        "-mprocedural_memory"
+                      ],
+                      "subcommands": [
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "leading-subcommand.v1"
+                  },
+                  {
+                    "config": {
+                      "executables": [
+                        "py",
+                        "py.cmd",
+                        "py.exe",
+                        "python",
+                        "python.cmd",
+                        "python.exe",
+                        "python3",
+                        "python3.10",
+                        "python3.11",
+                        "python3.12",
+                        "python3.13",
+                        "python3.14",
+                        "python3.cmd",
+                        "python3.exe"
+                      ],
+                      "forbidden_flags": [],
+                      "forbidden_flags_before_delimiter": [],
+                      "interleaved_options_with_values": [],
+                      "options_with_values": [
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "-W",
+                        "-X"
+                      ],
+                      "required_flags_anywhere": [
+                        "-mprocedural_memory.cli"
+                      ],
+                      "subcommands": [
                         "import-legacy"
                       ]
                     },
@@ -432,126 +891,377 @@
                     "config": {},
                     "matchers": [
                       {
-                        "config": {},
-                        "matchers": [
-                          {
-                            "config": {
-                              "executables": [
-                                "procedural-memory",
-                                "procedural-memory.cmd",
-                                "procedural-memory.exe"
-                              ],
-                              "forbidden_flags": [],
-                              "forbidden_flags_before_delimiter": [],
-                              "interleaved_options_with_values": [],
-                              "options_with_values": [
-                                "--r",
-                                "--ro",
-                                "--roo",
-                                "--root"
-                              ],
-                              "required_flags_anywhere": [],
-                              "subcommands": [
-                                "import-legacy"
-                              ]
-                            },
-                            "op": "leading-subcommand.v1"
-                          },
-                          {
-                            "config": {
-                              "executables": [
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "forbidden_flags": [],
-                              "forbidden_flags_before_delimiter": [],
-                              "interleaved_options_with_values": [
-                                "--r",
-                                "--ro",
-                                "--roo",
-                                "--root"
-                              ],
-                              "options_with_values": [],
-                              "required_flags_anywhere": [
-                                "-m"
-                              ],
-                              "subcommands": [
-                                "procedural_memory",
-                                "import-legacy"
-                              ]
-                            },
-                            "op": "leading-subcommand.v1"
-                          },
-                          {
-                            "config": {
-                              "executables": [
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "forbidden_flags": [],
-                              "forbidden_flags_before_delimiter": [],
-                              "interleaved_options_with_values": [
-                                "--r",
-                                "--ro",
-                                "--roo",
-                                "--root"
-                              ],
-                              "options_with_values": [],
-                              "required_flags_anywhere": [
-                                "-m"
-                              ],
-                              "subcommands": [
-                                "procedural_memory.cli",
-                                "import-legacy"
-                              ]
-                            },
-                            "op": "leading-subcommand.v1"
-                          }
-                        ],
-                        "op": "any.v1"
+                        "config": {
+                          "executables": [
+                            "procedural-memory",
+                            "procedural-memory.cmd",
+                            "procedural-memory.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
                       },
                       {
-                        "config": {},
-                        "matchers": [
-                          {
-                            "config": {
-                              "executables": [
-                                "procedural-memory",
-                                "procedural-memory.cmd",
-                                "procedural-memory.exe",
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "required_flags": [
-                                "--help"
-                              ]
-                            },
-                            "op": "executable.v1"
-                          },
-                          {
-                            "config": {
-                              "executables": [
-                                "procedural-memory",
-                                "procedural-memory.cmd",
-                                "procedural-memory.exe",
-                                "py",
-                                "python",
-                                "python3"
-                              ],
-                              "required_flags": [
-                                "-h"
-                              ]
-                            },
-                            "op": "executable.v1"
-                          }
-                        ],
-                        "op": "any.v1"
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory.cli",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-mprocedural_memory"
+                          ],
+                          "subcommands": [
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "--help",
+                            "-mprocedural_memory.cli"
+                          ],
+                          "subcommands": [
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "procedural-memory",
+                            "procedural-memory.cmd",
+                            "procedural-memory.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root"
+                          ],
+                          "options_with_values": [
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-m"
+                          ],
+                          "subcommands": [
+                            "procedural_memory.cli",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-mprocedural_memory"
+                          ],
+                          "subcommands": [
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
+                      },
+                      {
+                        "config": {
+                          "executables": [
+                            "py",
+                            "py.cmd",
+                            "py.exe",
+                            "python",
+                            "python.cmd",
+                            "python.exe",
+                            "python3",
+                            "python3.10",
+                            "python3.11",
+                            "python3.12",
+                            "python3.13",
+                            "python3.14",
+                            "python3.cmd",
+                            "python3.exe"
+                          ],
+                          "forbidden_flags": [],
+                          "forbidden_flags_before_delimiter": [],
+                          "interleaved_options_with_values": [],
+                          "options_with_values": [
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "-W",
+                            "-X"
+                          ],
+                          "required_flags_anywhere": [
+                            "-h",
+                            "-mprocedural_memory.cli"
+                          ],
+                          "subcommands": [
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "leading-subcommand.v1"
                       }
                     ],
-                    "op": "all.v1"
+                    "op": "any.v1"
                   },
                   "title": "procedural-memory command help",
                   "variant_id": "help"
@@ -1111,6 +1821,158 @@
       "expected_effective_segments": [],
       "id": "exec-import-legacy",
       "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "procedural-memory delete create_note_for_record && procedural-memory list --help",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "help-in-other-segment-keeps-delete-reviewed",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "procedural-memory -h; procedural-memory import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        1
+      ],
+      "id": "short-help-in-other-segment-keeps-import-reviewed",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "python.exe -m procedural_memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-python-exe",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "py.exe -m procedural_memory import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "import-legacy-py-exe",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "python3.12 -m procedural_memory --root ./skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-python3-12",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python -W ignore -m procedural_memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-python-warning-option",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python3 -X dev -m procedural_memory.cli import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "import-legacy-python-x-option",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "python -mprocedural_memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-attached-module",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python3 -mprocedural_memory.cli --root ./skills delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-attached-cli-module-root",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python -mprocedural_memory import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "import-legacy-attached-module",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "python -mprocedural_memory delete --help",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "delete-attached-module-help",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python.exe -m procedural_memory delete -h",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "delete-python-exe-short-help",
+      "rule_id": "command.procedural-memory.delete"
     }
   ],
   "schema": "guard.command-extension-fixtures.v1"
