@@ -133,6 +133,107 @@
                   },
                   {
                     "config": {
+                      "allow_leading_options": true,
+                      "executables": [
+                        "uv",
+                        "uv.exe"
+                      ],
+                      "fail_secure_unknown_options": true,
+                      "interspersed_flags": [
+                        "--frozen",
+                        "--locked",
+                        "--no-config",
+                        "--no-project",
+                        "--no-sync",
+                        "--offline"
+                      ],
+                      "interspersed_options_with_values": [
+                        "--directory",
+                        "--package",
+                        "--project",
+                        "--python",
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "--with",
+                        "--with-editable",
+                        "--with-requirements"
+                      ],
+                      "subcommands": [
+                        "run",
+                        "procedural-memory",
+                        "delete"
+                      ]
+                    },
+                    "op": "executable.v1"
+                  },
+                  {
+                    "config": {
+                      "allow_leading_options": true,
+                      "executables": [
+                        "uvx",
+                        "uvx.exe"
+                      ],
+                      "fail_secure_unknown_options": true,
+                      "interspersed_flags": [
+                        "--isolated",
+                        "--no-cache",
+                        "--offline"
+                      ],
+                      "interspersed_options_with_values": [
+                        "--default-index",
+                        "--from",
+                        "--index",
+                        "--python",
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "--with",
+                        "--with-editable",
+                        "--with-requirements"
+                      ],
+                      "subcommands": [
+                        "procedural-memory",
+                        "delete"
+                      ]
+                    },
+                    "op": "executable.v1"
+                  },
+                  {
+                    "config": {
+                      "allow_leading_options": true,
+                      "executables": [
+                        "pipx",
+                        "pipx.exe"
+                      ],
+                      "fail_secure_unknown_options": true,
+                      "interspersed_flags": [
+                        "--no-cache",
+                        "--quiet",
+                        "--verbose"
+                      ],
+                      "interspersed_options_with_values": [
+                        "--index-url",
+                        "--pip-args",
+                        "--python",
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "--spec"
+                      ],
+                      "subcommands": [
+                        "run",
+                        "procedural-memory",
+                        "delete"
+                      ]
+                    },
+                    "op": "executable.v1"
+                  },
+                  {
+                    "config": {
                       "executables": [
                         "py",
                         "py.cmd",
@@ -146,8 +247,11 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -158,6 +262,7 @@
                         "--root"
                       ],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "-W",
                         "-X"
                       ],
@@ -186,8 +291,11 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -198,6 +306,7 @@
                         "--root"
                       ],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "-W",
                         "-X"
                       ],
@@ -226,8 +335,11 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -238,6 +350,7 @@
                         "--root"
                       ],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "-W",
                         "-X"
                       ],
@@ -266,13 +379,17 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
                       "interleaved_options_with_values": [],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "--r",
                         "--ro",
                         "--roo",
@@ -304,13 +421,17 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
                       "interleaved_options_with_values": [],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "--r",
                         "--ro",
                         "--roo",
@@ -342,13 +463,17 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
                       "interleaved_options_with_values": [],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "--r",
                         "--ro",
                         "--roo",
@@ -407,6 +532,116 @@
                       },
                       {
                         "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uv",
+                            "uv.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--frozen",
+                            "--locked",
+                            "--no-config",
+                            "--no-project",
+                            "--no-sync",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--directory",
+                            "--package",
+                            "--project",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uvx",
+                            "uvx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--isolated",
+                            "--no-cache",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--default-index",
+                            "--from",
+                            "--index",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "procedural-memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "pipx",
+                            "pipx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--no-cache",
+                            "--quiet",
+                            "--verbose"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--index-url",
+                            "--pip-args",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--spec"
+                          ],
+                          "required_flags": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
                           "executables": [
                             "py",
                             "py.cmd",
@@ -420,8 +655,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -432,6 +670,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -461,8 +700,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -473,6 +715,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -502,8 +745,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -514,6 +760,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -543,13 +790,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -582,13 +833,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -621,13 +876,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -672,6 +931,116 @@
                       },
                       {
                         "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uv",
+                            "uv.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--frozen",
+                            "--locked",
+                            "--no-config",
+                            "--no-project",
+                            "--no-sync",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--directory",
+                            "--package",
+                            "--project",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uvx",
+                            "uvx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--isolated",
+                            "--no-cache",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--default-index",
+                            "--from",
+                            "--index",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "procedural-memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "pipx",
+                            "pipx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--no-cache",
+                            "--quiet",
+                            "--verbose"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--index-url",
+                            "--pip-args",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--spec"
+                          ],
+                          "required_flags": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "delete"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
                           "executables": [
                             "py",
                             "py.cmd",
@@ -685,8 +1054,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -697,6 +1069,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -726,8 +1099,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -738,6 +1114,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -767,8 +1144,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -779,6 +1159,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -808,13 +1189,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -847,13 +1232,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -886,13 +1275,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -959,6 +1352,107 @@
                   },
                   {
                     "config": {
+                      "allow_leading_options": true,
+                      "executables": [
+                        "uv",
+                        "uv.exe"
+                      ],
+                      "fail_secure_unknown_options": true,
+                      "interspersed_flags": [
+                        "--frozen",
+                        "--locked",
+                        "--no-config",
+                        "--no-project",
+                        "--no-sync",
+                        "--offline"
+                      ],
+                      "interspersed_options_with_values": [
+                        "--directory",
+                        "--package",
+                        "--project",
+                        "--python",
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "--with",
+                        "--with-editable",
+                        "--with-requirements"
+                      ],
+                      "subcommands": [
+                        "run",
+                        "procedural-memory",
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "executable.v1"
+                  },
+                  {
+                    "config": {
+                      "allow_leading_options": true,
+                      "executables": [
+                        "uvx",
+                        "uvx.exe"
+                      ],
+                      "fail_secure_unknown_options": true,
+                      "interspersed_flags": [
+                        "--isolated",
+                        "--no-cache",
+                        "--offline"
+                      ],
+                      "interspersed_options_with_values": [
+                        "--default-index",
+                        "--from",
+                        "--index",
+                        "--python",
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "--with",
+                        "--with-editable",
+                        "--with-requirements"
+                      ],
+                      "subcommands": [
+                        "procedural-memory",
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "executable.v1"
+                  },
+                  {
+                    "config": {
+                      "allow_leading_options": true,
+                      "executables": [
+                        "pipx",
+                        "pipx.exe"
+                      ],
+                      "fail_secure_unknown_options": true,
+                      "interspersed_flags": [
+                        "--no-cache",
+                        "--quiet",
+                        "--verbose"
+                      ],
+                      "interspersed_options_with_values": [
+                        "--index-url",
+                        "--pip-args",
+                        "--python",
+                        "--r",
+                        "--ro",
+                        "--roo",
+                        "--root",
+                        "--spec"
+                      ],
+                      "subcommands": [
+                        "run",
+                        "procedural-memory",
+                        "import-legacy"
+                      ]
+                    },
+                    "op": "executable.v1"
+                  },
+                  {
+                    "config": {
                       "executables": [
                         "py",
                         "py.cmd",
@@ -972,8 +1466,11 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -984,6 +1481,7 @@
                         "--root"
                       ],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "-W",
                         "-X"
                       ],
@@ -1012,8 +1510,11 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -1024,6 +1525,7 @@
                         "--root"
                       ],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "-W",
                         "-X"
                       ],
@@ -1052,8 +1554,11 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
@@ -1064,6 +1569,7 @@
                         "--root"
                       ],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "-W",
                         "-X"
                       ],
@@ -1092,13 +1598,17 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
                       "interleaved_options_with_values": [],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "--r",
                         "--ro",
                         "--roo",
@@ -1130,13 +1640,17 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
                       "interleaved_options_with_values": [],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "--r",
                         "--ro",
                         "--roo",
@@ -1168,13 +1682,17 @@
                         "python3.12",
                         "python3.13",
                         "python3.14",
+                        "python3.15",
                         "python3.cmd",
-                        "python3.exe"
+                        "python3.exe",
+                        "pythonw",
+                        "pythonw.exe"
                       ],
                       "forbidden_flags": [],
                       "forbidden_flags_before_delimiter": [],
                       "interleaved_options_with_values": [],
                       "options_with_values": [
+                        "--check-hash-based-pycs",
                         "--r",
                         "--ro",
                         "--roo",
@@ -1233,6 +1751,116 @@
                       },
                       {
                         "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uv",
+                            "uv.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--frozen",
+                            "--locked",
+                            "--no-config",
+                            "--no-project",
+                            "--no-sync",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--directory",
+                            "--package",
+                            "--project",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uvx",
+                            "uvx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--isolated",
+                            "--no-cache",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--default-index",
+                            "--from",
+                            "--index",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "procedural-memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "pipx",
+                            "pipx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--no-cache",
+                            "--quiet",
+                            "--verbose"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--index-url",
+                            "--pip-args",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--spec"
+                          ],
+                          "required_flags": [
+                            "--help"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
                           "executables": [
                             "py",
                             "py.cmd",
@@ -1246,8 +1874,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -1258,6 +1889,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -1287,8 +1919,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -1299,6 +1934,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -1328,8 +1964,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -1340,6 +1979,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -1369,13 +2009,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -1408,13 +2052,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -1447,13 +2095,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -1498,6 +2150,116 @@
                       },
                       {
                         "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uv",
+                            "uv.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--frozen",
+                            "--locked",
+                            "--no-config",
+                            "--no-project",
+                            "--no-sync",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--directory",
+                            "--package",
+                            "--project",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "uvx",
+                            "uvx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--isolated",
+                            "--no-cache",
+                            "--offline"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--default-index",
+                            "--from",
+                            "--index",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--with",
+                            "--with-editable",
+                            "--with-requirements"
+                          ],
+                          "required_flags": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "procedural-memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
+                          "allow_leading_options": true,
+                          "executables": [
+                            "pipx",
+                            "pipx.exe"
+                          ],
+                          "fail_secure_unknown_options": true,
+                          "interspersed_flags": [
+                            "--no-cache",
+                            "--quiet",
+                            "--verbose"
+                          ],
+                          "interspersed_options_with_values": [
+                            "--index-url",
+                            "--pip-args",
+                            "--python",
+                            "--r",
+                            "--ro",
+                            "--roo",
+                            "--root",
+                            "--spec"
+                          ],
+                          "required_flags": [
+                            "-h"
+                          ],
+                          "subcommands": [
+                            "run",
+                            "procedural-memory",
+                            "import-legacy"
+                          ]
+                        },
+                        "op": "executable.v1"
+                      },
+                      {
+                        "config": {
                           "executables": [
                             "py",
                             "py.cmd",
@@ -1511,8 +2273,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -1523,6 +2288,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -1552,8 +2318,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -1564,6 +2333,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -1593,8 +2363,11 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
@@ -1605,6 +2378,7 @@
                             "--root"
                           ],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "-W",
                             "-X"
                           ],
@@ -1634,13 +2408,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -1673,13 +2451,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -1712,13 +2494,17 @@
                             "python3.12",
                             "python3.13",
                             "python3.14",
+                            "python3.15",
                             "python3.cmd",
-                            "python3.exe"
+                            "python3.exe",
+                            "pythonw",
+                            "pythonw.exe"
                           ],
                           "forbidden_flags": [],
                           "forbidden_flags_before_delimiter": [],
                           "interleaved_options_with_values": [],
                           "options_with_values": [
+                            "--check-hash-based-pycs",
                             "--r",
                             "--ro",
                             "--roo",
@@ -2487,6 +3273,169 @@
       "expected_action": "review",
       "expected_effective_segments": [],
       "id": "delete-dunder-main-module-help",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python3.15 -m procedural_memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-python3-15",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "pythonw.exe -m procedural_memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-pythonw-exe",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "python --check-hash-based-pycs always -m procedural_memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-python-hash-pycs-option",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "py -3.12 -m procedural_memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-py-launcher-version",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "bash -c 'procedural-memory delete create_note_for_record'",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-bash-c",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "sudo procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "require-reapproval",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-sudo",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "env PM_DEBUG=1 procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "block",
+      "expected_effective_segments": [],
+      "id": "delete-env-wrapper",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "uv run procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-uv-run",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "uv run --with rich procedural-memory --root ./skills import-legacy ./legacy-skills",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "import-legacy-uv-run-options",
+      "rule_id": "command.procedural-memory.import-legacy"
+    },
+    {
+      "command": "uvx --from scriptflow-procedural-memory procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-uvx",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "pipx run --spec scriptflow-procedural-memory procedural-memory delete create_note_for_record",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [
+        0
+      ],
+      "id": "delete-pipx-run",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "uv run procedural-memory delete --help",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "delete-uv-run-help",
+      "rule_id": "command.procedural-memory.delete"
+    },
+    {
+      "command": "uv run procedural-memory list",
+      "disabled_permissions": [],
+      "enabled_extensions": [
+        "command.procedural-memory"
+      ],
+      "expected_action": "review",
+      "expected_effective_segments": [],
+      "id": "list-uv-run",
       "rule_id": "command.procedural-memory.delete"
     }
   ],
