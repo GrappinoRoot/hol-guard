@@ -3708,9 +3708,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "delete-uv-run-python-module",
       "rule_id": "command.procedural-memory.delete"
     },
@@ -3721,9 +3719,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "import-legacy-uv-run-python3-cli",
       "rule_id": "command.procedural-memory.import-legacy"
     },
@@ -3734,9 +3730,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "delete-uv-run-options-versioned-dunder-main",
       "rule_id": "command.procedural-memory.delete"
     },
@@ -3747,9 +3741,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "delete-uv-run-python-attached-module",
       "rule_id": "command.procedural-memory.delete"
     },
@@ -3760,9 +3752,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "delete-uv-run-python-warning-option",
       "rule_id": "command.procedural-memory.delete"
     },
@@ -3773,9 +3763,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "delete-uv-run-module-flag",
       "rule_id": "command.procedural-memory.delete"
     },
@@ -3786,9 +3774,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "import-legacy-uv-run-module-long",
       "rule_id": "command.procedural-memory.import-legacy"
     },
@@ -3799,9 +3785,7 @@
         "command.procedural-memory"
       ],
       "expected_action": "review",
-      "expected_effective_segments": [
-        0
-      ],
+      "expected_effective_segments": [],
       "id": "delete-uv-run-module-assignment",
       "rule_id": "command.procedural-memory.delete"
     },
