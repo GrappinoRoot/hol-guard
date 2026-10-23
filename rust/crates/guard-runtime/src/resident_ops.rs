@@ -477,6 +477,9 @@ pub(crate) fn evaluate_resident_bytes_with_cancellation(
                     &request,
                 )
             }
+            ResidentOperationV1::CommandPackRecord(request) => {
+                crate::command_pack_record_op::evaluate_command_pack_record_request(&request)
+            }
             ResidentOperationV1::PolicyIntegrityRows(request) => {
                 crate::policy_integrity_rows_op::evaluate_policy_integrity_rows_request(&request)
             }
@@ -503,6 +506,16 @@ pub(crate) fn evaluate_resident_bytes_with_cancellation(
             }
             ResidentOperationV1::HookArtifactFacts(request) => {
                 crate::hook_artifact_facts_op::evaluate_hook_artifact_facts_request(&request)
+            }
+            ResidentOperationV1::InventoryItemClassification(request) => {
+                crate::inventory_item_classification_op::evaluate_inventory_item_classification_request(
+                    &request,
+                )
+            }
+            ResidentOperationV1::InventorySnapshotDigest(request) => {
+                crate::inventory_snapshot_digest_op::evaluate_inventory_snapshot_digest_request(
+                    &request,
+                )
             }
             ResidentOperationV1::InventorySourceEvidence(request) => {
                 crate::inventory_source_evidence_op::evaluate_inventory_source_evidence_request(
@@ -566,6 +579,9 @@ pub(crate) fn evaluate_resident_bytes_with_cancellation(
             }
             ResidentOperationV1::PackageProtectFinalize(request) => {
                 crate::package_protect_finalize_op::evaluate_package_protect_finalize(&request)
+            }
+            ResidentOperationV1::PackageEvaluationView(request) => {
+                crate::package_evaluation_view_op::evaluate_package_evaluation_view(&request)
             }
             ResidentOperationV1::PackagePosture(request) => {
                 crate::package_posture_op::evaluate_package_posture(&request)
@@ -678,6 +694,15 @@ pub(crate) fn evaluate_resident_bytes_with_cancellation(
             ResidentOperationV1::VerifiedReadDecision(request) => {
                 crate::verified_read_decision_op::evaluate_verified_read_decision(&request)
             }
+            ResidentOperationV1::InventoryUrlRedaction(request) => {
+                crate::inventory_url_redaction_op::evaluate_inventory_url_redaction(&request)
+            }
+            ResidentOperationV1::VerifiedReadPlan(request) => {
+                crate::verified_read_plan_op::evaluate_verified_read_plan(&request)
+            }
+            ResidentOperationV1::AibomReportSummaries(request) => {
+                crate::aibom_report_summaries_op::evaluate_aibom_report_summaries(&request)
+            }
             #[cfg(not(unix))]
             ResidentOperationV1::ContainedNodeExecute(_)
             | ResidentOperationV1::ContainedTypescriptExecute(_)
@@ -748,6 +773,7 @@ fn operation_guard_home(operation: &ResidentOperationV1) -> Option<&str> {
         ResidentOperationV1::CursorObserverProof(request) => Some(&request.guard_home),
         ResidentOperationV1::HookAuthorityState(request) => Some(&request.guard_home),
         ResidentOperationV1::ExtensionControlAuthority(request) => Some(&request.guard_home),
+        ResidentOperationV1::CommandPackRecord(request) => Some(&request.guard_home),
         ResidentOperationV1::PackageAdvisoryIds(request) => Some(&request.guard_home),
         ResidentOperationV1::PackageEvaluationCompose(request) => Some(&request.guard_home),
         ResidentOperationV1::VerifiedNpm(request) => Some(&request.guard_home),
@@ -820,6 +846,7 @@ fn operation_store_path(operation: &ResidentOperationV1) -> Option<&str> {
         ResidentOperationV1::ContributedMcpDecide(request) => Some(&request.store_path),
         ResidentOperationV1::HookAuthorityState(request) => Some(&request.store_path),
         ResidentOperationV1::ExtensionControlAuthority(request) => Some(&request.store_path),
+        ResidentOperationV1::CommandPackRecord(request) => Some(&request.store_path),
         ResidentOperationV1::ProtectRequest(request) => request.store_path.as_deref(),
         ResidentOperationV1::CodexRequestResume(request) => Some(&request.store_path),
         ResidentOperationV1::PolicyIntegrityRows(request) => request
